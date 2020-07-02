@@ -1,4 +1,4 @@
-#class, dataframe
+#class
 
 import random
 import pandas as pd
@@ -52,13 +52,16 @@ def random_test(lst):
     tple = lst[index_position]
     word_attempt(tple, incorrect_list)
     question_number += 1
-  print('\nThe word(s) that you got incorrect were: \n {}'.format(incorrect_list))
+  if len(incorrect_list) > 0:
+    words = pd.DataFrame(incorrect_list, columns = ['Arabic', 'English'])
+    print('\nThe word(s) that you got incorrect were: \n')  
+    print(words)
   
-  retest = input('\nWould you like a test on the words which you got wrong? (yes/no)\n')
-  yes_command = (retest == 'yes' or retest == 'Yes' or retest == 'yes ' or retest == 'Yes ')
-  if yes_command:
-    print(' --------------------\n')
-    complete_test(incorrect_list)
+    retest = input('\nWould you like a test on the words which you got wrong? (yes/no)\n')
+    yes_command = (retest == 'yes' or retest == 'Yes' or retest == 'yes ' or retest == 'Yes ')
+    if yes_command:
+      print(' --------------------\n')
+      complete_test(incorrect_list)
   return
 
 
