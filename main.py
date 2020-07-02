@@ -1,4 +1,4 @@
-#class, dataframe, error with arabic for retest
+#class, dataframe
 
 import random
 import pandas as pd
@@ -35,8 +35,7 @@ def word_attempt(tple, incorrect_list):
 def complete_test(lst):
   for i in range(len(lst)):
     arabic, english = lst[i]
-    arabic_fixed = arabic_text(arabic)
-    attempt = input('\nWhat is {} in English?\n'.format(arabic_fixed))
+    attempt = input('\nWhat is {} in English?\n'.format(arabic))
 
     answer = '\n --------------------\nThe answer is \'{}\'\n --------------------'.format(english)
     print(answer)
